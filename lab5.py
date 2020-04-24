@@ -73,14 +73,11 @@ def student_test(b_list, number_x=10):
         t_practice = 0
         t_theoretical = student(f3, q)
         for i in range(N):
-            if k == 0:
-                t_practice += ser_y[i] / N
-            else:
-                t_practice += ser_y[i] * matrix_norm[i][k - 1]
+            t_practice += ser_y[i] * matrix_norm[i][k]
         if fabs(t_practice / dispersion_b) < t_theoretical:
             b_list[k] = 0
     return b_list
-
+# Тут не потрібна була перевірка
 
 def fisher_test():
     dispersion = 0
